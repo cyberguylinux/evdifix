@@ -1,9 +1,20 @@
   GNU nano 5.9                                                                            cyberguylinux.sh                                                                            Modified  
 #! /bin/bash
 
+# Enable multilib in arch by editing /etc/pacman.conf and scroll down to where you see #[multilib] and removing the # from both lines
+#then update your cache by issuing:
+sudo pacman -Syy
+
 # Install linux-headers and git as well as base-devel
 
 sudo pacman -S base-devel git linux-headers
+
+# Install pikaur in arch for installing additional software
+git clone https://aur.archlinux.org/pikaur.git
+cd pikaur/
+makepkg -fsri
+cd..
+
 
 # clone aaronrancsik from github
 git clone https://github.com/aaronrancsik/evdi-arch.git
